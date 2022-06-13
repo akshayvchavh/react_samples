@@ -1,11 +1,11 @@
-import Navbar from './components/Navbar';
-import Home from "./components/Home";
+
+import MainRouter from "./components/ReactRouter/MainRouter";
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Home />
+      <MainRouter />
     </div>
   );
 }

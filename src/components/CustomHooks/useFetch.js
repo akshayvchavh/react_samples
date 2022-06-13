@@ -13,7 +13,14 @@ const useFetch = (url) => {
     }
 
     useEffect(()=>{
+        const abortCont = new AbortController();
+
         fetchDatas();
+
+        return () => {
+            abortCont.abort();
+            console.log("cleanup executed");
+        };
     } , [] );
 
     return {data , isLoading , error };

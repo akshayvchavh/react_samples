@@ -5,7 +5,7 @@ const MainFile = () => {
     const url = "https://jsonplaceholder.typicode.com/posts";
 
     const { data, isLoading, error } = useFetch(url);
-
+    console.log(data);
     return (
         <div>
             {/* Loading info */}
@@ -15,9 +15,9 @@ const MainFile = () => {
             {data && (
                 <ul>
                     {data.map(user => (
-                        <div id={user.id}>
-                            <li key={user.id}>{user.title}</li>
-                            <p key={user.id}>{user.body}</p>
+                        <div key={user.id}>
+                            <li>{user.title}</li>
+                            <p>{user.body}</p>
                         </div>
                     ))}
                 </ul>
